@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="382.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form_journalController">
+  <children>
+    <VBox padding="$x1" prefHeight="436.0" prefWidth="331.0" spacing="5.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="Tanggal" />
+        <DatePicker fx:id="tdate" prefHeight="25.0" prefWidth="338.0" promptText="Tanggal Transaksi" />
+        <Label text="Jenis Biaya" />
+            <ComboBox fx:id="cbiaya" editable="true" prefHeight="25.0" prefWidth="326.0" promptText="Jenis Biaya" />
+        <Label text="Rincian" />
+        <TextArea fx:id="trincian" prefWidth="200.0" promptText="Rincian Journal" wrapText="true" />
+        <Label text="Jumlah" />
+        <TextField fx:id="tjumlah" prefWidth="200.0" promptText="Jumlah Biaya" />
+       <HBox prefHeight="40.0" prefWidth="321.0" spacing="5.0">
+          <children>
+            <Button fx:id="bsimpan" prefHeight="30.0" prefWidth="127.0" text="_Simpan [ALT+S]" />
+            <Button fx:id="bclear" prefHeight="29.0" prefWidth="135.0" text="_Bersihkan [ALT+B]" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

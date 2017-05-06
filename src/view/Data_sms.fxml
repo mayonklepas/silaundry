@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="1092.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Data_smsController">
+  <children>
+    <ToolBar layoutY="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+      <items>
+        <Button fx:id="bsmsbaru" text="_SMS Baru [ALT+S]" />
+        <Button fx:id="bbalas" text="_Balas [ALT+B]" />
+        <Button fx:id="bhapus" text="_Hapus [ALT+H]" />
+        <TextField fx:id="tcari" prefWidth="266.0" promptText="Cari Data" />
+      </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+    </ToolBar>
+    <TableView fx:id="tbview" layoutY="60.0" prefHeight="525.0" prefWidth="806.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="60.0">
+      <columns>
+            <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+        <TableColumn fx:id="nohp" maxWidth="5000.0" minWidth="10.0" prefWidth="125.0" text="Nomor" />
+        <TableColumn fx:id="nama_member" maxWidth="5000.0" minWidth="10.0" prefWidth="188.0" text="Nama" />
+        <TableColumn fx:id="alamat_member" maxWidth="5000.0" minWidth="10.0" prefWidth="194.0" text="Alamat" />
+        <TableColumn fx:id="pesan" maxWidth="5000.0" minWidth="10.0" prefWidth="240.0" text="Pesan" />
+      </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+    </TableView>
+     <Pane prefHeight="41.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <children>
+        <Button id="tprev" fx:id="bprev" layoutX="154.0" layoutY="9.0" mnemonicParsing="false" prefWidth="41.0" />
+        <Button id="tnext" fx:id="bnext" layoutX="240.0" layoutY="9.0" mnemonicParsing="false" prefWidth="41.0" />
+        <Label id="tvtotal" fx:id="ltotal" layoutX="287.0" layoutY="14.0" prefWidth="278.0" text="100  Dari 10000 Data" />
+        <Label layoutX="14.0" layoutY="14.0" text="Limit" />
+        <TextField fx:id="tlimit" layoutX="47.0" layoutY="9.0" prefWidth="103.0" text="100" />
+        <Button fx:id="brefresh" layoutX="197.0" layoutY="9.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="41.0" />
+      </children>
+    </Pane>
+      <Pane layoutX="754.0" layoutY="60.0" prefHeight="525.0" prefWidth="266.0" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Detail Pesan" />
+            <Label layoutX="14.0" layoutY="51.0" text="No" />
+            <Label layoutX="14.0" layoutY="76.0" text="Nama" />
+            <Label layoutX="14.0" layoutY="101.0" text="Alamat" />
+            <Label layoutX="14.0" layoutY="200.0" text="Pesan" />
+            <Label layoutX="68.0" layoutY="101.0" text=":" />
+            <Label layoutX="68.0" layoutY="76.0" text=":" />
+            <Label layoutX="68.0" layoutY="51.0" text=":" />
+            <Label fx:id="lnohp" layoutX="75.0" layoutY="51.0" text="-" />
+            <Label fx:id="lnama" layoutX="77.0" layoutY="76.0" text="-" />
+            <Label layoutX="68.0" layoutY="200.0" prefHeight="15.0" prefWidth="4.0" text=":" />
+            <TextFlow fx:id="tfalamat" layoutX="13.0" layoutY="118.0" prefHeight="78.0" prefWidth="244.0" />
+            <TextFlow fx:id="tfpesan" layoutX="13.0" layoutY="234.0" prefHeight="200.0" prefWidth="244.0" />
+         </children>
+      </Pane>
+      <Pane prefHeight="24.0" prefWidth="354.0" style="-fx-background-color: #4c4c4c;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="10.0" layoutY="3.0" text="SMS" textFill="#fcfcfc" />
+         </children>
+      </Pane>
+  </children>
+</AnchorPane>

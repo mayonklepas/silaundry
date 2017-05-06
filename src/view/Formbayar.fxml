@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="392.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FormbayarController">
+   <children>
+      <VBox prefHeight="446.0" prefWidth="416.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label text="Total Biaya">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="95.0" prefWidth="326.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label fx:id="ltotal" alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #11C32A;" text="0">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label text="Uang Muka">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="326.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label fx:id="luangmuka" alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #11C32A;" text="0">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label text="Sisa">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="326.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label fx:id="lsisa" alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #11C32A;" text="0">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label text="Kembalian">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="326.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label fx:id="lkembalian" alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #11C32A;" text="0">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label text="Jumlah Uang">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tjumlahuang" prefHeight="34.0" prefWidth="396.0" promptText="Masukan jumlah uang">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button fx:id="bsimpan" prefHeight="25.0" prefWidth="364.0" text="_Simpan Transaksi [ALT+S]" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.embed.swing.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="488.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GrafikController">
+   <children>
+      <ToolBar layoutY="-6.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <DatePicker fx:id="ddari" prefHeight="25.0" prefWidth="241.0" promptText="Dari tanggal" />
+            <DatePicker fx:id="dsampai" prefHeight="25.0" prefWidth="238.0" promptText="Sampai tanggal" />
+          <Button fx:id="blihat" mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" text="Generate Grafik" />
+        </items>
+      </ToolBar>
+      <VBox layoutY="40.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #DDDDF4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <HBox prefHeight="566.0" prefWidth="839.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <BarChart fx:id="barchart" HBox.hgrow="ALWAYS">
+                    <xAxis>
+                      <CategoryAxis fx:id="barcategory" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="barnumber" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <PieChart fx:id="piechart" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox prefHeight="108.0" prefWidth="839.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

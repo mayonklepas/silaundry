@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Data_transaksiController">
+  <children>
+    <ToolBar layoutY="24.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <items>
+        <TextField fx:id="tcari" prefHeight="25.0" prefWidth="442.0" promptText="Ketik Nama / No HP / ID Barang" />
+            <Button fx:id="bbayar" text="_Bayar [ALT+B]" />
+      </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+    </ToolBar>
+    <Pane prefHeight="73.0" prefWidth="1156.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane layoutX="8.0" layoutY="9.0" prefHeight="56.0" prefWidth="500.0">
+               <children>
+                  <Label fx:id="ltotal" contentDisplay="RIGHT" layoutX="11.0" layoutY="10.0" prefHeight="36.0" prefWidth="479.0" text="Total : -" textAlignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Glow level="0.48" />
+               </effect>
+            </Pane>
+         </children>
+    </Pane>
+      <Pane prefHeight="24.0" prefWidth="354.0" style="-fx-background-color: #4c4c4c;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="10.0" layoutY="3.0" text="Transaksi Pembayaran" textFill="#fcfcfc" />
+         </children>
+      </Pane>
+      <TableView fx:id="tbview" editable="true" layoutY="59.0" prefHeight="342.0" prefWidth="796.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <columns>
+            <TableColumn fx:id="idbarangmasuk" prefWidth="31.0" text="ID" />
+            <TableColumn fx:id="layanan" prefWidth="163.0" text="Layanan" />
+            <TableColumn fx:id="jumlah" minWidth="0.0" prefWidth="122.0" text="Qty / KG" />
+            <TableColumn fx:id="keterangan" prefWidth="285.0" text="Keterangan" />
+            <TableColumn fx:id="biaya" prefWidth="174.0" text="Biaya" />
+         </columns>
+      </TableView>
+  </children>
+</AnchorPane>

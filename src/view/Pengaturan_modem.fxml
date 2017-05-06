@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Pengaturan_modemController">
+   <children>
+      <VBox layoutX="-24.0" layoutY="7.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Modem" />
+            <TextField fx:id="tmodem" />
+            <Label text="COMM Port" />
+            <TextField fx:id="tcommport" />
+            <Label text="Baud Rate" />
+            <TextField fx:id="tbaudrate" />
+            <Label text="Vendor" />
+            <TextField fx:id="tvendor" />
+            <Label text="Tipe" />
+            <TextField fx:id="ttipe" />
+            <Label text="SMS Center" />
+            <TextField fx:id="tsmscenter" />
+            <Label text="SIM Pin" />
+            <TextField fx:id="tpin" />
+            <Button fx:id="bsimpan" mnemonicParsing="false" text="Simpan Pengaturan" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

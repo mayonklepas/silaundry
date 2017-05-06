@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="324.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form_smsController">
+  <children>
+    <VBox padding="$x1" prefHeight="311.0" prefWidth="331.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="No Handphone" />
+        <TextField fx:id="tnohp" prefWidth="200.0" promptText="No Handphone" />
+        <Label text="Pesan" />
+            <TextArea fx:id="tpesan" prefHeight="200.0" prefWidth="200.0" promptText="Tulis Pesan" />
+        <HBox prefHeight="40.0" prefWidth="321.0" spacing="5.0">
+          <children>
+            <Button fx:id="bkirim" prefHeight="28.0" prefWidth="123.0" text="_Kirim [ALT+K]" />
+            <Button fx:id="bclear" prefHeight="28.0" prefWidth="135.0" text="_Bersihkan [ALT+B]" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

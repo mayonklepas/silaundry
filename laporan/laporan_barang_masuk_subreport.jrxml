@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporan_barang_masuk_subreport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a79dafdd-b183-490e-843d-2829fb92de43">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_barang" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT dl.nama_layanan,dbm.jumlah,(dbm.jumlah * dl.tarif_layanan) AS total_tarif FROM data_barang_masuk dbm LEFT JOIN data_layanan dl ON dbm.id_layanan=dl.id_layanan WHERE id_barang=$P{id_barang}]]>
+	</queryString>
+	<field name="nama_layanan" class="java.lang.String"/>
+	<field name="jumlah" class="java.lang.Double"/>
+	<field name="total_tarif" class="java.lang.Double"/>
+	<variable name="total_tarif_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_tarif}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="250" height="20" uuid="28e01399-9ad8-4292-a5db-8f5267dacfc4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Layanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="5" width="120" height="20" uuid="e8f6c611-6f84-4ba8-9a49-ab4e31aa2106"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah / Kg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="5" width="185" height="20" uuid="7f07b3f3-798f-4da9-b3ea-db51269929fd"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Tarif]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="27" width="555" height="1" uuid="ffa988f4-92b4-4fa3-aa62-5bb061720d7a"/>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="2d766cd6-6ece-459f-8fff-728a0dc1476b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="250" height="20" uuid="82bf3a43-4a34-40ad-b2f8-3a7237436d96"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama_layanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="120" height="20" uuid="895cfadc-d99a-4b6a-a635-08c46b7fb7ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="370" y="0" width="185" height="20" uuid="cbb40a85-d4c6-46a9-ad03-c16a279af279"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total_tarif}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="22" width="555" height="1" uuid="96e78973-5810-4360-aaea-10dbd1ee5694"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="270" y="3" width="100" height="20" uuid="d1af11a6-8a75-43a9-bb2f-62a1d0ddba98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Keseluruhan :]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="370" y="3" width="185" height="20" uuid="f7a7168e-85e6-4c83-8905-f0b374bf8328"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{total_tarif_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

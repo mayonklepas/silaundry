@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TransaksicontainerController">
+   <children>
+      <SplitPane fx:id="splitpane" dividerPositions="0.4171632896305125" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="397.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <ImageView id="imgsms" fx:id="bsms1" fitHeight="63.0" fitWidth="61.0" layoutX="15.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_hover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgjournal" fx:id="bjournal1" fitHeight="63.0" fitWidth="61.0" layoutX="149.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_hover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgcuciselesai" fx:id="bcuciselesai1" fitHeight="63.0" fitWidth="61.0" layoutX="264.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_hover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgpembayaran" fx:id="bpembayaran1" fitHeight="63.0" fitWidth="61.0" layoutX="147.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_hover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgcucimasuk" fx:id="bcucimasuk1" fitHeight="63.0" fitWidth="61.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" styleClass="imgcucimasuk:hover{  -fx-image: url('@../image/button_hover.png');}">
+                     <image>
+                        <Image url="@../image/button_hover.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="9.0" layoutY="127.0" text="Cucian Masuk" />
+                  <Label layoutX="142.0" layoutY="127.0" text="Pembayaran" />
+                  <Label layoutX="257.0" layoutY="127.0" text="Cucian Selesai" />
+                  <Label layoutX="160.0" layoutY="319.0" text="Journal" />
+                  <Pane layoutX="-4.0" layoutY="-1.0" prefHeight="24.0" prefWidth="354.0" style="-fx-background-color: #4c4c4c;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="3.0" text="Alur Proses Data Transaksi" textFill="#fcfcfc" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="33.0" layoutY="462.0" text="SMS" />
+                  <ImageView fitHeight="10.0" fitWidth="70.0" layoutX="76.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/line_horizontal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="10.0" fitWidth="70.0" layoutX="202.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/line_horizontal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="8.0" fitWidth="239.0" layoutX="37.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/line_horizontal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="10.0" layoutX="180.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/line_vertical.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgcucimasuk" fx:id="bcucimasuk" fitHeight="63.0" fitWidth="61.0" layoutX="15.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" styleClass="imgcucimasuk:hover{  -fx-image: url('@../image/button_hover.png');}">
+                     <image>
+                        <Image url="@../image/button_normal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgsms" fx:id="bsms" fitHeight="63.0" fitWidth="61.0" layoutX="16.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_normal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgpembayaran" fx:id="bpembayaran" fitHeight="63.0" fitWidth="61.0" layoutX="146.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_normal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgcuciselesai" fx:id="bcuciselesai" fitHeight="63.0" fitWidth="61.0" layoutX="264.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_normal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="imgjournal" fx:id="bjournal" fitHeight="63.0" fitWidth="61.0" layoutX="150.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/button_normal.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="childcontainer" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="237.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form_layananController">
+  <children>
+    <VBox padding="$x1" prefHeight="200.0" prefWidth="236.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="ID Layanan" />
+        <TextField id="id_layanan" fx:id="tid" prefWidth="200.0" promptText="ID Layanan" />
+        <Label text="Nama Layanan" />
+        <TextField fx:id="tnama" prefWidth="200.0" promptText="Nama Layanan" />
+        <Label prefHeight="21.000091552734375" text="Ukuran / KG" />
+        <TextField fx:id="tukuran" prefWidth="200.0" promptText="Ukuran Berat / KG" />
+        <Label text="Tarif" />
+        <TextField id="tnohp" fx:id="ttarif" prefWidth="200.0" promptText="Tarif Layanan" />
+         <HBox prefHeight="40.0" prefWidth="321.0" spacing="5.0">
+          <children>
+            <Button fx:id="bsimpan" prefHeight="30.0" prefWidth="127.0" text="_Simpan [ALT+S]" />
+            <Button fx:id="bclear" prefHeight="29.0" prefWidth="135.0" text="_Bersihkan [ALT+B]" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

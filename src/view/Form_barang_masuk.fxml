@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="537.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form_barang_masukController">
+  <children>
+    <VBox padding="$x1" prefHeight="409.0" prefWidth="331.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+            <Label text="* Jika bukan member, ID Member diisi No HP">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+        <Label text="No Handphone" />
+            <TextField fx:id="tnohp" promptText="No Handphone" />
+            <Label text="Nama " />
+            <TextField fx:id="tnama" promptText="Nama" />
+            <Label text="Alamat" />
+            <TextField fx:id="talamat" promptText="Alamat" />
+            <Label text="Tanggal Selesai" />
+            <DatePicker fx:id="dtanggalselesai" prefHeight="25.0" prefWidth="462.0" promptText="Tanggal Selesai" VBox.vgrow="ALWAYS" />
+            <TableView fx:id="tvbarangmasuk" editable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn fx:id="idbarangmasuk" prefWidth="31.0" text="ID" />
+                <TableColumn fx:id="layanan" prefWidth="92.0" text="Layanan" />
+                <TableColumn fx:id="jumlah" prefWidth="61.0" text="Qty / KG" />
+                  <TableColumn fx:id="keterangan" prefWidth="209.0" text="Keterangan" />
+                  <TableColumn fx:id="biaya" prefWidth="61.0" text="Biaya" />
+              </columns>
+            </TableView>
+            <HBox spacing="5.0">
+               <children>
+                  <Button fx:id="btambahcucian" prefHeight="25.0" prefWidth="236.0" text="Tambah Cucian [ALT+T]" />
+                  <Button fx:id="bhapus" mnemonicParsing="false" prefHeight="25.0" prefWidth="227.0" text="Hapus [ALT+H]" />
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="96.0" prefWidth="337.0">
+               <children>
+                  <Label layoutX="269.0" layoutY="6.0" text="Total" AnchorPane.rightAnchor="165.0" />
+                  <Label fx:id="ltotal" layoutX="430.0" layoutY="6.0" text="0" textAlignment="RIGHT" AnchorPane.rightAnchor="24.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="269.0" layoutY="34.0" text="UM / Cash" AnchorPane.rightAnchor="130.0" />
+                  <TextField fx:id="tuangmuka" layoutX="339.0" layoutY="29.0" prefHeight="25.0" prefWidth="108.0" promptText="UM / Cash" AnchorPane.rightAnchor="14.0" />
+                  <Label layoutX="269.0" layoutY="62.0" text="Sisa" AnchorPane.rightAnchor="171.0" />
+                  <Label fx:id="lsisa" layoutX="434.0" layoutY="62.0" text="0" textAlignment="RIGHT" AnchorPane.rightAnchor="24.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        <HBox prefHeight="35.0" prefWidth="134.0" spacing="5.0">
+          <children>
+            <Button fx:id="bsimpan" prefHeight="25.0" prefWidth="242.0" text="_Simpan [ALT+S]" />
+                  <Button fx:id="bcetak" prefHeight="25.0" prefWidth="261.0" text="Cetak [ALT+P]" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55852334-945d-4ae6-9459-af090b92bf10">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="dari" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hingga" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="perusahaan" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select mb.id_akun, 'total_trans' as jenis, sum(bm.jumlah * dl.tarif_layanan) as total
+from data_master_barang mb
+inner join data_barang_masuk bm on bm.id_barang = mb.id_barang
+inner join data_layanan dl on bm.id_layanan = dl.id_layanan
+where mb.tanggal_masuk::date >=$P{dari}  and mb.tanggal_masuk::date <= $P{hingga}
+group by mb.id_akun
+union all
+select j.id_akun, 'total_pembayaran' as jenis,sum(j.jumlah) as total
+from data_journal j
+inner join data_biaya b on j.id_biaya = b.id_biaya
+where b.kategori_biaya = 'Pendapatan'
+and j.tanggal::date >=$P{dari} and j.tanggal::date <=$P{hingga} 
+group by j.id_akun
+union all
+select mb.id_akun, 'total_uangmuka' as jenis, sum(mb.uangmuka) as total
+from data_master_barang mb
+where mb.tanggal_masuk::date >=$P{dari}  and mb.tanggal_masuk::date <= $P{hingga}
+group by mb.id_akun
+union all
+select j.id_akun, 'total_biaya' as jenis,sum(j.jumlah) as total
+from data_journal j
+inner join data_biaya b on j.id_biaya = b.id_biaya
+where b.kategori_biaya = 'Pengeluaran'
+and j.tanggal::date >= $P{dari} and j.tanggal::date <= $P{hingga}
+group by j.id_akun]]>
+	</queryString>
+	<field name="id_akun" class="java.lang.String"/>
+	<field name="jenis" class="java.lang.String"/>
+	<field name="total" class="java.lang.Double"/>
+	<group name="id_akun">
+		<groupExpression><![CDATA[$F{id_akun}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#000000" uuid="06df58f5-9e10-4f4f-87fd-829d8a3f957e"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{id_akun}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="1669b7d9-09b8-46ca-bc45-37b1a165791a"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement style="Title" x="0" y="13" width="299" height="33" uuid="2d9736fd-638e-484c-aa7b-3ab6c6ab2bfd"/>
+				<textElement verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$P{perusahaan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="260" height="22" uuid="1661b887-d0a7-48a4-bb3d-e0b16df92cae"/>
+				<text><![CDATA[Laporan Saldo Kasir]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="8e7f5512-6938-4362-bd0f-5156c7514f19"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="277" height="15" uuid="e8dcaa79-093c-4668-8ef6-e8292c4f46e9"/>
+				<text><![CDATA[jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="277" y="19" width="277" height="15" uuid="747eaeed-8c67-4a97-8c83-157e0d09e5d2"/>
+				<text><![CDATA[total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="e1e0397b-61b5-4dda-b25d-6d969d77803f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="277" height="15" uuid="538708ac-7738-44d4-9881-27bfd5cfa7e4"/>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Detail" x="277" y="0" width="277" height="15" uuid="5220ea64-7330-44a2-a9c8-87865c45a749"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="111bb9b2-2fa2-4504-82ed-21afc9f2896c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9f783033-272d-4562-8ae9-1f2a2ddf24d8"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="944a755a-6b8c-4865-a691-ffa87ac7ff2f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="7085cc76-ea7c-428e-87b6-e00da40ef756"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

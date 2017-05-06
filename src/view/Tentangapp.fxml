@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="249.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TentangappController">
+   <children>
+      <Pane layoutX="14.0" layoutY="18.0" prefHeight="207.0" prefWidth="377.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="18.0">
+         <children>
+            <Label layoutX="64.0" layoutY="14.0" text="Mizan Accounting - Aplikasi Laundry V.1.0" />
+            <Label layoutX="64.0" layoutY="133.0" text="Pengembang" />
+            <Label layoutX="161.0" layoutY="133.0" text=":" />
+            <Label layoutX="179.0" layoutY="133.0" text="Mizan Accounting" />
+            <Label layoutX="64.0" layoutY="158.0" text="Website" />
+            <Label layoutX="161.0" layoutY="158.0" text=":" />
+            <Label layoutX="179.0" layoutY="158.0" text="www.mizanacc.com" />
+            <Label layoutX="66.0" layoutY="183.0" text="Handphone" />
+            <Label layoutX="163.0" layoutY="183.0" text=":" />
+            <Label layoutX="179.0" layoutY="183.0" text="+62818-0575-4534" />
+            <Label layoutX="21.0" layoutY="50.0" text="Aplikasi yang  di rancang untuk penggunaan dalam" />
+            <Label layoutX="21.0" layoutY="69.0" text="usaha laundri, dengan fitur dan kemampuan untuk" />
+            <Label layoutX="21.0" layoutY="89.0" text="mendukung kemudahan dalam mengatur usaha" />
+            <Label layoutX="22.0" layoutY="107.0" text="laundri." />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

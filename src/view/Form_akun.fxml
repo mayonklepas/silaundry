@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="311.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Form_akunController">
+  <children>
+    <VBox padding="$x1" prefHeight="311.0" prefWidth="331.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="Nama" />
+        <TextField fx:id="tnama" prefWidth="200.0" promptText="Nama" />
+        <Label text="Username" />
+        <TextField fx:id="tusername" prefWidth="200.0" promptText="Username " />
+        <Label text="Tipe" />
+        <ComboBox fx:id="ctipe" prefHeight="23.0" prefWidth="321.0" promptText="Pilih Tipe">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label text="Password" />
+        <PasswordField fx:id="tpassword" prefWidth="200.0" promptText="Password" />
+        <Label text="Retype Password" />
+        <PasswordField fx:id="trepassword" prefWidth="200.0" promptText="Ketik ulang password" />
+        <HBox prefHeight="40.0" prefWidth="321.0" spacing="5.0">
+          <children>
+            <Button fx:id="bsimpan" prefHeight="30.0" prefWidth="127.0" text="_Simpan [ALT+S]" />
+            <Button fx:id="bclear" prefHeight="29.0" prefWidth="135.0" text="_Bersihkan [ALT+B]" />
+          </children>
+          <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" fx:id="x1" />
+          </padding>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

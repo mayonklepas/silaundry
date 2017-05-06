@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TentangappController">
+   <children>
+      <Pane layoutX="14.0" layoutY="18.0" prefHeight="202.0" prefWidth="380.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="18.0">
+         <children>
+            <Label layoutX="64.0" layoutY="14.0" text="Mizan Accounting - Aplikasi Laundri V.1.0" />
+            <Label layoutX="46.0" layoutY="63.0" text="Email" />
+            <Label layoutX="143.0" layoutY="63.0" text=":" />
+            <Label layoutX="161.0" layoutY="63.0" text="imonks21@gmail.com" />
+            <Label layoutX="46.0" layoutY="88.0" text="Website" />
+            <Label layoutX="143.0" layoutY="88.0" text=":" />
+            <Label layoutX="161.0" layoutY="88.0" text="www.mizanacc.com" />
+            <Label layoutX="46.0" layoutY="113.0" text="Handphone" />
+            <Label layoutX="144.0" layoutY="113.0" text=":" />
+            <Label layoutX="161.0" layoutY="113.0" text="+62818-0575-4534" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
